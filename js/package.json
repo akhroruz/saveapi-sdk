@@ -1,0 +1,35 @@
+{
+  "name": "saveapi",
+  "version": "0.1.0",
+  "description": "Official JavaScript/TypeScript client for saveapi.org — download media from Instagram, TikTok, YouTube, Facebook, X, Pinterest and 7 more platforms with one API.",
+  "keywords": [
+    "instagram downloader api", "tiktok downloader api", "youtube downloader api",
+    "social media downloader", "video downloader", "instagram", "tiktok", "reels", "saveapi"
+  ],
+  "homepage": "https://saveapi.org/",
+  "bugs": "https://github.com/akhroruz/saveapi-sdk/issues",
+  "repository": { "type": "git", "url": "git+https://github.com/akhroruz/saveapi-sdk.git", "directory": "js" },
+  "license": "MIT",
+  "author": "saveapi.org <hello@saveapi.org>",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/esm/index.d.ts", "default": "./dist/esm/index.js" },
+      "require": { "types": "./dist/cjs/index.d.cts", "default": "./dist/cjs/index.cjs" }
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/cjs.mjs",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
+}

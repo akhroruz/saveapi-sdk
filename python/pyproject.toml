@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "saveapi"
+version = "0.1.0"
+description = "Official Python client for saveapi.org — download media from Instagram, TikTok, YouTube, Facebook, X, Pinterest and 7 more platforms with one API."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "saveapi.org", email = "hello@saveapi.org" }]
+keywords = [
+  "instagram downloader api", "tiktok downloader api", "youtube downloader api",
+  "social media downloader", "video downloader", "instagram api", "tiktok api",
+  "reels downloader", "saveapi",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Multimedia :: Video",
+  "Typing :: Typed",
+]
+dependencies = ["httpx>=0.24", "typing_extensions>=4.5"]
+
+[project.urls]
+Homepage = "https://saveapi.org/"
+Documentation = "https://saveapi.org/en/docs/"
+Pricing = "https://saveapi.org/en/pricing/"
+Source = "https://github.com/akhroruz/saveapi-sdk"
+Changelog = "https://saveapi.org/en/changelog/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/saveapi"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
